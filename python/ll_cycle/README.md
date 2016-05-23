@@ -1,0 +1,1 @@
+The code sample in this folder determines whether a singly linked list contains a cycle. 

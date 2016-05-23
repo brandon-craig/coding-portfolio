@@ -1,0 +1,26 @@
+{
+	"config": {
+		"target": "http://localhost:3000",
+		"phases": [
+			{
+				"duration": 20,
+				"arrivalRate": 200
+			}
+		],
+		"variables": {
+			"lineNumber": ["1", "2", "3", "4", "5"]
+		}
+	},
+	"scenarios": [
+		{
+			"flow": [
+			{
+				"loop": [
+					{"get": {"url": "/lines/{{lineNumber}}"}}
+				],
+				"count": 10
+			}
+			]
+		}
+	]
+}

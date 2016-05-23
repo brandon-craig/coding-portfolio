@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/api/person.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/api/</a> person.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.86% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">14.29% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.43% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/37</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue';
+Vue.use(require('vue-resource'));
+import { EventEmitter } from 'events';
+import { Promise } from 'es6-promise';
+&nbsp;
+const personCache = Object.create(null);
+const pictureCache = Object.create(null);
+const person = new EventEmitter();
+const personBaseUrl = 'http://swapi.co/api/people/';
+const imgurBaseUrl = 'https://api.imgur.com/3/gallery/search/';
+export default person;
+&nbsp;
+person.fetch = <span class="fstat-no" title="function not covered" >id =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  if (!id) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn Promise.resolve('');
+  }
+<span class="cstat-no" title="statement not covered" >  r</span>eturn new Promise(<span class="fstat-no" title="function not covered" >(resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (personCache[id]) {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>esolve(personCache[id]);
+    }
+<span class="cstat-no" title="statement not covered" >    c</span>onst personToGet = `${personBaseUrl}${id}/`;
+<span class="cstat-no" title="statement not covered" >    V</span>ue.http.get(personToGet).then(<span class="fstat-no" title="function not covered" >response =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      c</span>onst personData = personCache[id] = response.data;
+<span class="cstat-no" title="statement not covered" >      r</span>esolve(personData);
+    }, reject);
+  });
+};
+&nbsp;
+person.getPicture = <span class="fstat-no" title="function not covered" >searchWord =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  if (!searchWord) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn Promise.resolve('');
+  }
+<span class="cstat-no" title="statement not covered" >  r</span>eturn new Promise(<span class="fstat-no" title="function not covered" >(resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (pictureCache[searchWord]) {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>esolve(pictureCache[searchWord]);
+    }
+<span class="cstat-no" title="statement not covered" >    c</span>onst param = {
+      q: searchWord,
+      q_type: 'jpg',
+    };
+<span class="cstat-no" title="statement not covered" >    V</span>ue.http.headers.common.Authorization = 'Client-ID e261b9fcc41f315';
+<span class="cstat-no" title="statement not covered" >    V</span>ue.http.get(imgurBaseUrl, param).then(<span class="fstat-no" title="function not covered" >response =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      l</span>et imgUrl = null;
+<span class="cstat-no" title="statement not covered" >      if (typeof response.data === 'undefined' || typeof response.data.data[0] === 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >        i</span>mgUrl = null;
+      } else <span class="cstat-no" title="statement not covered" >if (typeof response.data.data[0].cover !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >        i</span>mgUrl = 'http://i.imgur.com/'.concat(response.data.data[0].cover, 'm.jpg');
+      } else <span class="cstat-no" title="statement not covered" >if (typeof response.data.data[0].link !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >        i</span>mgUrl = response.data.data[0].link.replace(/\.jpg$/, 'm.jpg');
+      }
+<span class="cstat-no" title="statement not covered" >      r</span>esolve(imgUrl);
+    }, reject);
+  });
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon May 16 2016 14:54:19 GMT-0400 (EDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

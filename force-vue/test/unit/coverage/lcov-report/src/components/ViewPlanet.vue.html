@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/ViewPlanet.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">src/components/</a> ViewPlanet.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64.29% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.5% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/8</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// &lt;template&gt;
+//   &lt;div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card"&gt;
+//     &lt;mdl-button class="randplanetBtn" v-mdl-ripple-effect colored icon raised v-on:click="fetchRandomPlanet"&gt;
+//       &lt;i class="material-icons"&gt;public&lt;/i&gt; Random planet
+//     &lt;/mdl-button&gt;
+//     &lt;mdl-textfield floating-label="Name" :value.sync="planetData.name"&gt;&lt;/mdl-textfield&gt;
+//     &lt;mdl-textfield floating-label="Rotation Period" :value.sync="planetData.rotation_period"&gt;&lt;/mdl-textfield&gt;
+//     &lt;mdl-textfield floating-label="Orbital Period" :value.sync="planetData.orbital_period"&gt;&lt;/mdl-textfield&gt;
+//     &lt;mdl-textfield floating-label="Diameter" :value.sync="planetData.diameter"&gt;&lt;/mdl-textfield&gt;
+//     &lt;mdl-textfield floating-label="Climate" :value.sync="planetData.climate"&gt;&lt;/mdl-textfield&gt;
+//     &lt;mdl-textfield floating-label="Gravity" :value.sync="planetData.gravity"&gt;&lt;/mdl-textfield&gt;
+//     &lt;mdl-textfield floating-label="terrain" :value.sync="planetData.terrain"&gt;&lt;/mdl-textfield&gt;
+//     &lt;mdl-textfield floating-label="Surface Water" :value.sync="planetData.surface_water"&gt;&lt;/mdl-textfield&gt;
+//     &lt;mdl-textfield floating-label="Population" :value.sync="planetData.population"&gt;&lt;/mdl-textfield&gt;
+//   &lt;/div&gt;
+// &lt;/template&gt;
+//
+// &lt;script&gt;
+import planet from '../api/planet';
+import { MdlButton, MdlTextfield, directives } from 'vue-mdl';
+&nbsp;
+export default <span class="fstat-no" title="function not covered" >{</span>
+  components: {
+    MdlButton,
+    MdlTextfield,
+  },
+  directives,
+  data() {
+<span class="cstat-no" title="statement not covered" >    r</span>eturn {
+      planetData: {
+        name: '',
+        rotation_period: '',
+        orbital_period: '',
+        diameter: '',
+        climate: '',
+        gravity: '',
+        terrain: '',
+        surface_water: '',
+        population: '',
+      },
+    };
+  },
+  methods: <span class="fstat-no" title="function not covered" >{</span>
+    fetchRandomPlanet() <span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      c</span>onst randomPlanetId = Math.floor((Math.random() * 61) + 1);
+<span class="cstat-no" title="statement not covered" >      p</span>lanet.fetch(randomPlanetId).then(<span class="fstat-no" title="function not covered" >(planetData) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        t</span>his.planetData = Object.assign(this.planetData, planetData);
+      });
+    },
+  },
+};
+// &lt;/script&gt;
+&nbsp;
+/* generated by vue-loader */
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon May 16 2016 14:54:19 GMT-0400 (EDT)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
